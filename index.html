@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff8f2" />
+  <title>Saila's Study Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dot-bg"></div>
+
+  <!-- LOGIN / REGISTER -->
+  <main id="authPage" class="auth-page">
+    <section class="auth-intro">
+      <div class="brand"><span class="brand-heart">♥</span><div><b>SAILA'S CORNER</b><small>little steps, lovely dreams</small></div></div>
+      <p class="eyebrow">YOUR SOFT STUDY SPACE</p>
+      <h1>Assalamualaikum<br><span>Saila</span></h1>
+      <h2>AYO BELAJAR</h2>
+      <p class="intro-copy">A gentle little hub for your to-dos, study rhythm, material notes, and the big dream of ITS.</p>
+      <p class="privacy"><span>♙</span> Your study plans stay private to your account on this device.</p>
+    </section>
+
+    <section class="auth-card">
+      <div class="book-bubble">▤</div>
+      <p class="eyebrow">WELCOME BACK</p>
+      <h2 id="authHeading">Open your study space</h2>
+      <form id="authForm">
+        <label for="authEmail">Email address</label>
+        <input id="authEmail" type="email" placeholder="saila@example.com" autocomplete="email" required />
+        <label for="authPassword">Password</label>
+        <input id="authPassword" type="password" placeholder="At least 8 characters" minlength="8" autocomplete="current-password" required />
+        <button class="primary-btn" type="submit"><span>✧</span><span id="authButtonText">Mari Mulai Belajar</span><span>→</span></button>
+      </form>
+      <div class="or-line"><span>OR</span></div>
+      <button id="googleAuth" class="google-btn" type="button"><span class="google-g">G</span> Connect with Google</button>
+      <p class="switch-auth" id="switchAuth">New here? <button type="button" id="toggleAuth">Create an account</button></p>
+      <p class="auth-note">Demo login menyimpan akun pada browser ini. Jangan gunakan kata sandi penting.</p>
+    </section>
+  </main>
+
+  <!-- APP -->
+  <div id="appPage" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="side-brand"><span class="brand-heart">♥</span><div><strong>Saila's study hub</strong><small>SOFTLY, STEADILY</small></div></div>
+      <nav class="side-nav">
+        <a href="#overview" class="nav-link active" data-section="overview">✧ <span>Overview</span></a>
+        <a href="#todo" class="nav-link" data-section="todo">⊙ <span>To-do list</span></a>
+        <a href="#schedule" class="nav-link" data-section="schedule">▦ <span>Study schedule</span></a>
+        <a href="#notes" class="nav-link" data-section="notes">▤ <span>Material notes</span></a>
+        <a href="#targets" class="nav-link" data-section="targets">◎ <span>Big targets</span></a>
+        <a href="#assignments" class="nav-link" data-section="assignments">▣ <span>Assignments</span></a>
+      </nav>
+      <div class="side-dream"><p>slow steps still take you to Switzerland ♡</p><div class="progress-track"><span id="sideProgress"></span></div></div>
+      <button id="logoutBtn" class="logout-btn">⇥ <span>Sign out</span></button>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar" id="overview">
+        <div><p class="eyebrow" id="todayDate">TODAY</p><h1>Hello, Saila <span class="outline-heart">♡</span></h1><p class="subtitle">A little progress, a lovely future.</p></div>
+        <div class="top-actions"><span class="time-pill">◷ <b id="topClock">00:00</b></span><span class="avatar">S</span></div>
+      </header>
+
+      <section class="welcome-grid">
+        <article class="quote-card"><p class="eyebrow">TODAY'S REMINDER</p><blockquote>“Saila dalam perjalanan ke ITS, Saila dalam perjalanan menuju kesuksesan dalam hidup santai di Swiss.”</blockquote><p class="quote-sign">♥ &nbsp;keep going, gently</p><span class="quote-circle"></span></article>
+        <article class="clock-card"><div class="clock-icon">▦</div><p class="eyebrow blue-eyebrow">RIGHT NOW</p><div class="big-clock" id="bigClock">00:00</div><p id="fullDate" class="date-line">Hari ini</p><div class="clock-divider"></div><div class="wins-row"><b>Today's little wins</b><strong><span id="todayDone">0</span> tasks</strong></div></article>
+      </section>
+
+      <section class="panel todo-panel" id="todo">
+        <div class="panel-heading"><div><p class="eyebrow">⊙ TINY STEPS</p><h2>To-do list</h2></div><span class="count-pill" id="todoCount">0/0 done</span></div>
+        <form id="todoForm" class="inline-form"><input id="todoInput" type="text" placeholder="Add a little thing to do..." maxlength="140" required /><button class="round-add" aria-label="Tambah tugas">+</button></form>
+        <ul id="todoList" class="task-list"></ul>
+        <div id="todoEmpty" class="empty-state">All caught up! Time for a tea break ☕ 🎀</div>
+      </section>
+
+      <section class="section-block" id="schedule">
+        <div class="section-title-row"><div><p class="eyebrow">▦ YOUR RHYTHM</p><h2>Saila's Study Schedule</h2></div><button class="outline-btn" id="googleCalendarBtn">☁ Connect Google Calendar</button></div>
+        <div class="schedule-grid">
+          <form id="scheduleForm" class="schedule-form">
+            <h3>Plan a study block</h3>
+            <label for="scheduleDay">DAY</label><select id="scheduleDay"><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option></select>
+            <label for="scheduleSubject">SUBJECT OR FOCUS</label><input id="scheduleSubject" type="text" placeholder="e.g. Mathematics" maxlength="80" required />
+            <div class="time-fields"><div><label for="scheduleStart">STARTS</label><input id="scheduleStart" type="time" value="09:00" required /></div><div><label for="scheduleEnd">ENDS</label><input id="scheduleEnd" type="time" value="10:00" required /></div></div>
+            <button class="dark-btn" type="submit">＋ &nbsp; Add to schedule</button>
+          </form>
+          <div class="week-card" id="weekSchedule"></div>
+        </div>
+      </section>
+
+      <section class="lower-grid">
+        <article class="panel notes-panel" id="notes">
+          <p class="eyebrow">▤ FOREVER LIBRARY</p><h2>Material notes</h2>
+          <form id="noteForm"><input id="noteTitle" type="text" placeholder="Note title · e.g. Trigonometry basics" maxlength="100" required /><textarea id="noteContent" placeholder="Write what you want to remember..." rows="4" required></textarea><button class="soft-btn" type="submit">＋ &nbsp; Save note forever</button></form>
+          <div id="notesList" class="notes-list"></div>
+          <div id="notesEmpty" class="empty-state">Your beautiful notes will live here, always ♡</div>
+        </article>
+        <article class="panel targets-panel" id="targets">
+          <p class="eyebrow">◎ THE BIGGER PICTURE</p><h2>Big targets</h2>
+          <form id="targetForm">
+            <label for="semesterTarget">♡ SEMESTER TARGET</label><textarea id="semesterTarget" rows="3" placeholder="What would make this semester feel meaningful?"></textarea>
+            <label for="universityTarget">♙ STATE UNIVERSITY TARGET</label><textarea id="universityTarget" rows="3" placeholder="ITS — write the dream down."></textarea>
+            <button class="dark-btn target-save" type="submit">✧ &nbsp; Pin these targets</button>
+          </form>
+          <p id="targetSaved" class="saved-hint">Your dreams are saved on this device ♡</p>
+        </article>
+      </section>
+
+      <section class="panel assignment-panel" id="assignments">
+        <div class="panel-heading"><div><p class="eyebrow">▣ KEEP IT MOVING</p><h2>Assignment tracker</h2></div><strong class="completed-label"><span id="assignmentDone">0</span> completed</strong></div>
+        <form id="assignmentForm" class="assignment-form"><input id="assignmentName" type="text" placeholder="Assignment name" maxlength="140" required /><input id="assignmentDate" type="date" aria-label="Deadline" /><button class="round-add" aria-label="Tambah assignment">+</button></form>
+        <ul id="assignmentList" class="task-list assignment-list"></ul>
+        <div id="assignmentEmpty" class="empty-state">No assignments yet — one thing at a time, Saila 🎀</div>
+      </section>
+      <footer>Made with ♡ for Saila · little steps, lovely dreams</footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
